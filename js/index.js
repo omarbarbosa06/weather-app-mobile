@@ -1,3 +1,9 @@
-import currentWeather from "./current-weather.js";
+import currentWeather from './current-weather.js'
+import { viewPortSize } from './utils/viewport.js'
 
-currentWeather();
+const $app = document.querySelector('#app')
+const $loading = document.querySelector('#loading')
+
+viewPortSize($app)
+viewPortSize($loading)
+currentWeather()

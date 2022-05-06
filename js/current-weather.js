@@ -1,4 +1,4 @@
-import { formatDate, formatTemp } from '../utils/format-data.js'
+import { formatDate, formatTemp } from './utils/format-data.js'
 import { weatherConditionCodes } from './constants.js'
 import { getLatLon } from './geolocation.js'
 import { getCurrentWeather } from './services/weather.js'
