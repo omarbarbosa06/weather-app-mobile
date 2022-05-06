@@ -10,10 +10,6 @@ export function onViewPortResize(callback) {
   window.addEventListener('resize', callback)
 }
 
-export function offViewPortResize(callback) {
-  window.removeEventListener('resize', callback)
-}
-
 export function viewPortSize($el) {
   setViewportSize($el)
 
