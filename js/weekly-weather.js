@@ -49,5 +49,16 @@ export default async function weeklyWeather() {
   }
   const weeklist = formatWeekList(weather.list)
   configWeeklyWeather(weeklist)
-  draggable($container)
+
+  //Checking if mobile to enable dragging since it gives issues in desktop
+  let $draggableCSS = document.querySelector('.weeklyWeather-marker')
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    draggable($container)
+  } else {
+    $draggableCSS.classList.add('no-before')
+  }
 }
