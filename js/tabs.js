@@ -3,6 +3,7 @@ const $tabList = $tabContainer.querySelectorAll('.tab')
 
 const today = new Date()
 let weekday = today.getDay()
+let $currentTabActive = document.querySelector('.tab[aria-selected="true"]')
 
 const week = [
   'Sunday',
@@ -32,8 +33,12 @@ $tabList.forEach(($tab, index) => {
 })
 
 function handleSelectTabClick(event) {
-  const $tabSelected = event.target
   const $tabActive = document.querySelector('.tab[aria-selected="true"]')
+  const $tabSelected = event.target
+
+  if ($currentTabActive.textContent === $tabSelected.textContent) {
+    return
+  }
   $tabActive.removeAttribute('aria-selected')
   $tabSelected.setAttribute('aria-selected', true)
 
@@ -42,4 +47,5 @@ function handleSelectTabClick(event) {
   const $tabPanelSelected = document.querySelector(`.tabPanel:not([hidden])`)
   $tabPanel.hidden = false
   $tabPanelSelected.hidden = true
+  $currentTabActive = event.target
 }
