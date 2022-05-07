@@ -22,6 +22,5 @@ export function formatWeekList(rawData) {
       dayList = []
     }
   })
-  console.log(weeklist)
   return weeklist
 }

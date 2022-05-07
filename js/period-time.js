@@ -5,6 +5,8 @@ export function periodTimeTemplate({ temp, date, icon, description }) {
   <span class="dayWeather-time">${date}</span>
   <img
     class="dayWeather-icon"
+    height="48"
+    width="48"
     src="https://openweathermap.org/img/wn/${icon}@2x.png"
     alt="${description}"
     rain=""
@@ -13,7 +15,6 @@ export function periodTimeTemplate({ temp, date, icon, description }) {
 </li>`
 }
 export function createPeriodTime(weather) {
-  console.log(weather)
   const dateOptions = {
     hour: 'numeric',
     hour12: true,
@@ -26,6 +27,5 @@ export function createPeriodTime(weather) {
     icon: weather.weather[0].icon,
     description: weather.weather[0].description,
   }
-  console.log(config)
   return createDomElement(periodTimeTemplate(config))
 }
